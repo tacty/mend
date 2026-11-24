@@ -648,7 +648,7 @@ function v4aEdits(lines: string[], strict: boolean): Edit[] {
           const anchor = bl.slice(2).trim();
           cur = { anchor: anchor === '' ? null : anchor, eof: false, ops: [] };
           chunks.push(cur);
-        } else if (bl.trim() === '*** End of File') {
+        } else if (bl === '*** End of File') {
           if (cur === null) {
             cur = { anchor: null, eof: true, ops: [] };
             chunks.push(cur);
